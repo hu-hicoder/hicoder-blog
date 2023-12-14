@@ -7,4 +7,14 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://example.com',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+        remarkPlugins: [
+            'remark-math',
+        ],
+        rehypePlugins: [
+            ['rehype-katex', {
+            // Katex plugin options
+            }]
+        ]
+    }
 });
